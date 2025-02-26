@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+        }
+        #topMenu li {
+            display: inline;
+        }
+        #topMenu{
+            background-color: aqua;
+            display: inline;
+        }
+        .sidebar{
+            width: 20%;
+        }
+        .left{
+            float:left
+        }
+        .right{
+            float:right
+        }
+        #content-para{
+            background-color: yellow;
+        }
+        #footer{
+            background-color: lightgreen;
+            clear:both
+        }
+        #content{
+            overflow:hidden
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <span>MySite</span>
+        <ul id="topMenu">
+            <li><a href="">link</a></li>
+            <li><a href="">link</a></li>
+            <li><a href="">link</a></li>
+            <li><a href="">link</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <div class="sidebar left">
+            <ul id="sidebarMenu">
+                <li><a href="">link</a></li>
+                <li><a href="">link</a></li>
+                <li><a href="">link</a></li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quo voluptate facilis eius dignissimos velit modi corrupti? Rerum libero, aliquid odit iure molestiae voluptas aliquam tempora possimus velit, quasi inventore?</p>
+        </div>
+        <div class="sidebar right">
+            right sidebar
+        </div>
+        <div class="sidebar right">
+            right sidebar
+        </div>
+        <p id="content-para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla praesentium possimus quasi totam et nisi minus? Sit ipsum delectus maxime corporis neque asperiores ducimus quo eveniet quibusdam, in aliquam voluptatum.</p>
+    
+    </div>
+    <div id="footer">
+        Footer content
+    </div>
+</body>
+</html>

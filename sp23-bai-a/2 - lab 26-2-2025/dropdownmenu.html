@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu > li{
+            display: inline;
+        }
+        .has-dropdown{
+            position:relative;
+            background-color: aqua;
+        }
+        .dropdown{
+            position: absolute;
+            left: -30px;
+            background-color: yellow;
+            display: none;
+        }
+        .has-dropdown:hover .dropdown{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li><a href="">Home</a></li>
+        <li class="has-dropdown"><a href="">Hobbies</a>
+            <ul class="dropdown">
+                <li><a href="">hobby1</a></li>
+                <li><a href="">hobby2</a></li>
+                <li><a href="">hobby3</a></li>
+                <li><a href="">hobby4</a></li>
+            </ul>
+        </li>
+        <li><a href="">Contact Us</a></li>
+    </ul>
+    <div id="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel temporibus cupiditate nesciunt qui tempore, quisquam quae magni facilis ratione est aperiam animi non nisi dolorum alias, dolores fuga sed ullam.</div>
+</body>
+</html>

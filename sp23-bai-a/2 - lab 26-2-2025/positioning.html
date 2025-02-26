@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            padding: 3px;
+            margin:3px;
+        }
+        #gototop{
+            background-color: black;
+            color:white;
+            padding:10px;
+            border-radius: 50%;
+            margin:3px;
+            position: fixed;
+            bottom: 5px;
+            right:5px;
+        }
+        #second{
+            position: sticky;
+            top:5px;
+            background-color: gray;
+        }
+        #third{
+            background-color: aqua;
+            position: relative;
+            top:20px;
+            left:20px;
+            z-index: 2;
+        }
+        #fourth{
+            background-color: yellow;
+            position: relative;
+            z-index: 3;
+        }
+        #first{
+            position: relative;
+        }
+        #chat{
+            background-color: green;
+            color:white;
+            position: absolute;
+            top:15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        Top Header
+    </div>
+    <div id="content">
+        <a href="#header" id="gototop">Go to Top</a>
+        <div id="first">Lorem ipsum dolor sit
+                <span id="chat">Chat With Me</span>
+            amet consectetur adipisicing elit. Harum nesciunt ipsam nulla minus rerum blanditiis officiis itaque quasi debitis quidem consequuntur illo facere dicta magnam modi animi, iste veniam! Error.</div>
+        <div id="second">Ipsum, quisquam inventore perspiciatis repellendus esse omnis repellat in a alias, quis dolorum asperiores laboriosam. Rem quaerat at sequi quo facere quibusdam inventore beatae omnis ratione voluptatum. Et, minima sit.</div>
+        <div id="third">Possimus totam natus ipsa facere quo. Nulla repellendus eos iste aspernatur. Ex, at odit rem ipsa dicta animi eius architecto suscipit et voluptates, hic expedita ducimus voluptatem neque quos tenetur.</div>
+        <div id="fourth">Eius, facilis dolores! Facilis vitae vel dolore suscipit minus ad corrupti mollitia consequatur inventore nobis, ipsum obcaecati ea earum repellendus ut dolores, facere, quasi sed laudantium. Quidem rerum consequuntur sequi!</div>
+        <div id="fifth">Aliquid quasi provident officia asperiores quos soluta sequi quia totam pariatur suscipit, beatae quisquam. Veniam impedit, enim quasi, inventore ducimus corporis minus explicabo pariatur officia odio nisi beatae numquam laboriosam?</div>
+        <div id="sixth">Maxime numquam eaque ipsam alias quia a aperiam minus ut dolor dolores dolore, aliquam delectus sunt ratione laudantium ad quod vitae est mollitia exercitationem sequi eius, rem dignissimos! Sint, esse.</div>
+    </div>
+</body>
+</html>

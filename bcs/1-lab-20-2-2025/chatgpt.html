@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Column Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header, .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .menu {
+            background: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .column {
+            float: left;
+            padding: 20px;
+        }
+        .left {
+            width: 25%;
+            background: #f4f4f4;
+        }
+        .middle {
+            width: 50%;
+            background: #ddd;
+        }
+        .right {
+            width: 25%;
+            background: #f4f4f4;
+        }
+        .footer {
+            clear: both;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Website Header</h1>
+    </div>
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="container">
+        <div class="column left">
+            <h2>Left Sidebar</h2>
+            <p>Some content here...</p>
+        </div>
+        <div class="column middle">
+            <h2>Main Content</h2>
+            <p>Main area content goes here...</p>
+        </div>
+        <div class="column right">
+            <h2>Right Sidebar</h2>
+            <p>Additional content here...</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Website Footer</p>
+    </div>
+</body>
+</html>
