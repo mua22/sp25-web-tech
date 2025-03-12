@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            border: 3px solid red;
+        }
+        .success{
+            border:3px solid green;
+        }
+    </style>
+</head>
+<body>
+    <form action="http://www.google.com/search" id="myForm" onsubmit="submitForm(event)">
+        <input class="" id="search" type="text" name="q" value="Pakistan"/>
+        <input type="submit">
+    </form>
+    <script>
+        function submitForm(event){
+            // alert("Form Submit");
+            event.preventDefault();
+            let searchInput = document.getElementById("search");
+            if(!search.value){
+                console.log("Invalid Form");
+                searchInput.classList.add("error")
+                searchInput.classList.remove("success")
+            }else {
+                console.log("valid form");
+                searchInput.classList.add("success")
+                searchInput.classList.remove("error")
+            }
+        }
+    </script>
+</body>
+</html>

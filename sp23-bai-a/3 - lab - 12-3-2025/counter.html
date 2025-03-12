@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        btn{
+            padding:10px;
+        }
+        span{
+            padding:10px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <button id="incBtn" onclick="increment()">++</button>
+    <span id="count">5</span>
+    <button id="decBtn" onclick="decrement()">--</button>
+
+    <script>
+        console.log("Inside Script Tag");
+        function increment(){
+            console.log("increment called");
+            let counterSpan = document.getElementById("count");
+            console.log(counterSpan);
+            let count = Number(counterSpan.innerText);
+            count = count+1;
+            counterSpan.innerText = count;
+        }
+        function decrement(){
+            let counterSpan = document.getElementById("count");
+            
+            let count = Number(counterSpan.innerText);
+            count = count-1;
+            counterSpan.innerText = count;
+        }
+    </script>
+</body>
+</html>
