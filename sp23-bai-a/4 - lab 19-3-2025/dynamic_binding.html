@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("script started");
+        function doBindings(){
+            console.log("do bindings called");
+            let btn = document.getElementById("myBtn");
+            btn.onclick = btnClicked;
+        }
+        // setTimeout(doBindings,2000);
+        window.onload = doBindings;
+        function btnClicked(){
+            console.log("btn clicked")
+            alert("Btn CLicked");
+        }
+        console.log("scripted ended")
+    </script>
+</head>
+<body>
+    <button id="myBtn">Click Me</button>
+    
+</body>
+</html>
