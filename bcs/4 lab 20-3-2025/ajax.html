@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        function doBindings(){
+            // let fetchBtn = document.getElementById("fetchStoriesBtn");
+            // fetchBtn.onclick = fetchBtnClicked;
+            fetchBtnClicked();
+            $("#fetchStoriesBtn").on("click",fetchBtnClicked);
+            // $(".story .btn-del").on("click",deleteStory); // will not work as tags are created after page load
+            // $(document).on("click",".story .btn-del",deleteStory)
+            $("#stories").on("click",".story .btn-del",deleteStory)
+        }
+        // window.onload = doBindings;
+        // $(function(){
+        //     doBindings();
+        // })
+        $(doBindings); // call doBindings on page load using jquery
+        function fetchBtnClicked(){
+            console.log("fetch btn clicked");
+            // call api and get data
+            $.ajax({
+                url:"https://usmanlive.com/wp-json/api/stories",
+                success:handleStoriesData
+            })
+        }
+        function handleStoriesData(data){
+            console.log("data received");
+            console.log(data);
+            $("#stories").empty();
+            for (let index = 0; index < data.length; index++) {
+                const story = data[index];
+                $("#stories").append(`<div class="story">
+                    <h1>${story.title}</h1>
+                    <button class="btn-del" data-id="${story.id}">Del</button>
+                    <div>${story.content}</div>
+                    </div>`);
+                
+            }
+        }
+        function deleteStory(){
+            // alert("del btn clicked");
+            // $(this).remove();
+            // $(this).parent().remove();
+            let story = $(this).closest(".story");
+            story.remove();
+            let id = $(this).attr("data-id");
+            alert(id);
+            $.ajax({
+                url:"https://usmanlive.com/wp-json/api/stories/"+id,
+                method:"DELETE"}
+                );
+        }
+    </script>
+</head>
+<body>
+    <h1>Stories</h1>
+    <button id="fetchStoriesBtn">Fetch Stories</button>
+    <div id="stories">
+        Loading Stories ...
+    </div>
+</body>
+</html>
