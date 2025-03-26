@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX JQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        console.log("script started");
+        function loadStories(){
+            console.log("loading stories started");
+            $.ajax({
+                url:"https://usmanlive.com/wp-json/api/stories",
+                success:handleStoriesResponse
+            });
+            console.log("request Sent");
+        }
+        function handleStoriesResponse(data){
+            console.log("Received Data");
+            console.log(data);
+            $("#stories").empty();
+            for (let index = 0; index < data.length; index++) {
+                const story = data[index];
+                $("#stories").append('<div class="story"><h3>'+story.title+'</h3><button class="btn-del" data-id="'+story.id+'">Del</button><p>'+story.content+'</p></div>')
+            }
+        }
+        $(function(){
+            console.log("DOM Loaded");
+            $("#loadStoriesBtn").on("click",loadStories);
+            loadStories();
+            $("#stories").on("click",".btn-del", function(){
+                console.log("del btn clicked");
+                let btn = $(this);
+                let id=btn.attr("data-id");
+                console.log(`ID to be deleted: ${id}`);
+                $.ajax({
+                    url:"https://usmanlive.com/wp-json/api/stories/"+id,
+                    method:"DELETE"
+                })
+                btn.parent().remove();
+            })
+        })
+        console.log("script ended");
+    </script>
+</head>
+<body>
+    <h4>Stories CRUD Using AJAX</h4>
+    <button id="loadStoriesBtn">Load Stories</button>
+    <div id="stories">
+        Loading Stories ....
+    </div>
+</body>
+</html>
