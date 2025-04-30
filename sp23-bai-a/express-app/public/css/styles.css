@@ -1,3 +1,7 @@
 h1{
     background-color: blueviolet;
 }
+
+#menu li{
+    display: inline;
+}
