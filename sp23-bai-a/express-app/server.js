@@ -9,12 +9,14 @@ let server = express();
 
 server.use(express.static("public"));
 server.use(expressLayouts);
+server.use(express.urlencoded());
 server.set("view engine", "ejs");
 
 server.get("/login.html", (req, res) => {
   return res.status(404).send("File Not Found");
   res.render("homepage");
 });
+server.use("/", require("./controllers/admin/admin.products.controller"));
 
 server.get("/categories", (req, res) => {
   res.render("categories");
